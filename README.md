@@ -36,9 +36,11 @@ import { CopyButton } from '@nichoth/copy-button/min'
 ```
 
 ## example
+Include the CSS.
 
 ```js
 import { CopyButton } from '@nichoth/copy-button'
+import '@nichoth/copy-button/style.css'
 
 document.body.innerHTML = `
   <${copy-button} payload="example text">
