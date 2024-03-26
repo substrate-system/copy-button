@@ -15,7 +15,7 @@ npm i -S @nichoth/copy-button
 ## use
 
 ### index.js
-Import this file. It depends on [tonic](https://github.com/nichoth/tonic), so you will need to provide `Tonic` somehow, either through a bundler or `importmap`.
+Import this file. It depends on [tonic](https://github.com/nichoth/tonic) and [clipboard-copy](https://github.com/feross/clipboard-copy), so you will need to provide them somehow, either through a bundler or `importmap`.
 
 ```js
 import { CopyButton } from '@nichoth/copy-button'
@@ -40,7 +40,10 @@ import { CopyButton } from '@nichoth/copy-button/min'
 ```js
 import { CopyButton } from '@nichoth/copy-button'
 
-document.body.innerHTML = `<${copy-button}></${copy-button}>`
+document.body.innerHTML = `
+  <${copy-button} payload="example text">
+  </${copy-button}>
+`
 ```
 
 Create a button like this
