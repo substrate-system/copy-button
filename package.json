@@ -1,19 +1,39 @@
 {
-  "private": true,
+  "name": "@nichoth/copy-button",
+  "description": "Copy button made with web components",
   "type": "module",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
   "version": "0.0.0",
-  "main": "dist/index.js",
   "files": [
     "./dist/*"
   ],
+  "exports": {
+    ".": [
+      "./dist/index.js"
+    ],
+    "./min": [
+      "./dist/index.min.js"
+    ],
+    "./bundle": [
+      "./dist/index.bundle.js"
+    ],
+    "./*": [
+      "./dist/*.js",
+      "./dist/*"
+    ]
+  },
   "scripts": {
     "lint": "eslint \"./**/*.{ts,js}\"",
     "build-tests": "esbuild test/index.ts --target=es2020 --bundle --keep-names > test/test-bundle.js",
     "test": "npm run lint && npm run build && npm run build-tests && npm run test-tape-run",
     "test-tape-run": "cat test/index.html | tape-run --input=html --static=test | tap-arc",
-    "build-esm": "esbuild ./src/*.js --format=esm --keep--names --outdir=./dist --sourcemap=inline",
-    "build-esm:min": "esbuild ./src/*.js --format=esm --keep--names --minify --outdir=./dist --sourcemap=inline",
-    "build": "mkdir -p ./dist && rm -rf ./dist/* && npm run build-esm && npm run build-esm:min",
+    "build-esm": "esbuild ./src/*.js --format=esm --keep-names --outdir=./dist --sourcemap=inline",
+    "build-esm:bundle": "esbuild ./src/*.js --bundle --format=esm --keep-names --minify --outdir=./dist --out-extension:.js=.bundle.js --sourcemap=inline",
+    "build-esm:min": "esbuild ./src/*.js --bundle --format=esm --keep-names --minify --outdir=./dist --out-extension:.js=.min.js --sourcemap",
+    "build": "mkdir -p ./dist && rm -rf ./dist/* && npm run build-esm && npm run build-esm:min && npm run build-esm:bundle",
     "start": "vite",
     "preversion": "npm run lint",
     "version": "auto-changelog -p --template keepachangelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
@@ -41,22 +61,19 @@
     "typescript": "^5.3.3",
     "vite": "^5.1.6"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./*": {
-      "import": [
-        "./dist/*.js",
-        "./dist/*"
-      ],
-      "require": [
-        "./dist/*.cjs",
-        "./dist/*"
-      ]
-    }
-  },
   "author": "nichoth <nichoth@gmail.com> (https://nichoth.com)",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nichoth/copy-button.git"
+  },
+  "keywords": [
+    "copy",
+    "button",
+    "html"
+  ],
+  "bugs": {
+    "url": "https://github.com/nichoth/copy-button/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/nichoth/copy-button#readme"
 }
