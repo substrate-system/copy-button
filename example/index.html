@@ -9,8 +9,17 @@
 <body>
     <div id="root">
         copy this text by clicking the button
-        <copy-button></copy-button>
+        <copy-button id="clicker" payload="this text">
+        </copy-button>
     </div>
+
+    <script>
+        const el = document.getElementById('clicker')
+
+        el.addEventListener('click', ev => {
+            console.log('got the click', ev)
+        })
+    </script>
 
     <script type="module" src="./index.js"></script>
   </body>

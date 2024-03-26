@@ -8,9 +8,9 @@ import clipboardCopy from 'clipboard-copy'
 export class CopyButton extends Tonic {
     state = { success: false }
 
-    async click (ev) {
-        ev.preventDefault()
-        ev.stopPropagation()
+    async click () {
+        // ev.preventDefault()
+        // ev.stopPropagation()
         clipboardCopy(this.props.payload)
         this.state.success = true
         this.reRender()
