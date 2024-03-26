@@ -1,0 +1,48 @@
+.copy-button {
+    /* display: flex; */
+    display: inline;
+    margin-top: 1rem;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    padding: 0.3rem 0.4rem;
+    border: none;
+    background: none;
+    /* fill: white; */
+    padding: 0;
+    margin-top: 1rem;
+    color: var(--font-color);
+
+    &.success {
+        & .success-svg-wrapper {
+            display: inline;
+        }
+        & .copy-svg {
+            display: none;
+        }
+    }
+
+    & .success-svg-wrapper, .copy-svg-wrapper {
+        border-radius: 5px;
+        outline: 1px solid var(--success-color);
+        padding: 1px 2px;
+    }
+
+    & .copy-svg-wrapper {
+        outline-color: transparent;
+    }
+
+    & svg {
+        position: relative;
+        top: 1px;
+    }
+
+    & .success-svg-wrapper {
+        display: none;
+        border-color: var(--success-color);
+
+        & .success-svg {
+            fill: var(--success-color);
+        }
+    }
+}
