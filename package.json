@@ -26,7 +26,7 @@
     ]
   },
   "scripts": {
-    "lint": "eslint \"./**/*.{ts,js}\"",
+    "lint": "eslint \"./**/*.js\"",
     "build-tests": "esbuild test/index.ts --target=es2020 --bundle --keep-names > test/test-bundle.js",
     "test": "npm run lint && npm run build && npm run build-tests && npm run test-tape-run",
     "test-tape-run": "cat test/index.html | tape-run --input=html --static=test | tap-arc",
@@ -48,8 +48,6 @@
   "devDependencies": {
     "@bicycle-codes/tapzero": "^0.9.2",
     "@nichoth/debug": "^0.6.7",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
     "auto-changelog": "^2.4.0",
     "esbuild": "^0.20.1",
     "eslint": "^8.57.0",
