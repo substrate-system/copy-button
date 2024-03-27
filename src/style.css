@@ -10,15 +10,6 @@
     margin-top: 1rem;
     color: var(--font-color);
 
-    &.success {
-        & .success-svg-wrapper {
-            display: inline;
-        }
-        & .copy-svg-wrapper {
-            display: none;
-        }
-    }
-
     & .success-svg-wrapper, .copy-svg-wrapper {
         border-radius: 5px;
         outline: 1px solid var(--success-color);
@@ -36,10 +27,18 @@
 
     & .success-svg-wrapper {
         display: none;
-        border-color: var(--success-color);
 
         & .success-svg {
-            fill: var(--success-color);
+            fill: var(--success-color, black);
+        }
+    }
+
+    &.success {
+        & .success-svg-wrapper {
+            display: inline;
+        }
+        & .copy-svg-wrapper {
+            display: none;
         }
     }
 }

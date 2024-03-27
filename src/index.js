@@ -22,6 +22,7 @@ export class CopyButton extends Tonic {
     render () {
         const classes = ([
             'copy-button',
+            this.props['no-outline'] ? 'no-outline' : '',
             this.state.success ? 'success' : '',
             this.props.class
         ])
