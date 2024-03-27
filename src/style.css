@@ -14,7 +14,7 @@
         & .success-svg-wrapper {
             display: inline;
         }
-        & .copy-svg {
+        & .copy-svg-wrapper {
             display: none;
         }
     }
