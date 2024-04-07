@@ -37,7 +37,7 @@
     "build-bundle": "esbuild --keep-names --bundle --tsconfig=tsconfig.build.json --outfile=./dist/index.bundle.js ./src/bundle.ts",
     "build-bundle:min": "esbuild --keep-names --bundle --tsconfig=tsconfig.build.json --minify --outfile=./dist/index.bundle.min.js ./src/bundle.ts",
     "build-css": "cp ./src/style.css ./dist",
-    "build-example": "vite --base \"/scroll-progress/\" build",
+    "build-example": "vite --base \"/copy-button/\" build",
     "build": "mkdir -p ./dist && rm -rf ./dist/* && npm run build-cjs && npm run build-esm && npm run build-bundle && npm run build-bundle:min && npm run build-css",
     "start": "vite",
     "preversion": "npm run lint",
