@@ -11,44 +11,78 @@ A button to copy some text to the system clipboard, made with webcomponents.
 npm i -S @nichoth/copy-button
 ```
 
-## use
+## demonstration
+
+See [bicycle-codes.github.io/scroll-progress](https://bicycle-codes.github.io/scroll-progress/) for an example with the default CSS.
 
 ## globals
 This looks at a css variable `--success-color`, which determines the color the checkmark that is displayed after you copy something.
 
-### index.js
+## use
+There are several options.
+
+### Bundler
 Import this file. It depends on [tonic](https://github.com/nichoth/tonic) and [clipboard-copy](https://github.com/feross/clipboard-copy), so you will need to provide them somehow, either through a bundler or `importmap`.
 
-```js
-import { CopyButton } from '@nichoth/copy-button'
-```
-
-### index.bundle.js
-Import this file, including all its dependencies.
 
 ```js
-import { CopyButton } from '@nichoth/copy-button/bundle'
+import Tonic from '@bicycle-codes/tonic'
+import { CopyButton } from '@bicycle-codes/copy-button'
+import '@bicycle-codes/copy-button/style.css'
+
+function ButtonExample () {
+    // this *needs* an ID attribute
+    return this.html`
+        <copy-button class="scroll example" id="example"></copy-button>
+    `
+}
+
+Tonic.add(CopyButton)
+Tonic.add(ButtonExample)
 ```
 
-### index.min.js
-Use a minified version of this file. It includes all dependencies.
+### pre-bundled
+First copy the bundled file to a location that is accessible to your web server:
 
-```js
-import { CopyButton } from '@nichoth/copy-button/min'
+```sh
+cp ./node_modules/@bicycle-codes/copy-button/dist/index.bundle.js ./public/copy-button.js
 ```
 
-## example
-Include the CSS.
+Then link to the bundled file, and you can use as an html element.
 
-```js
-import { CopyButton } from '@nichoth/copy-button'
-import '@nichoth/copy-button/style.css'
-
-document.body.innerHTML = `
-  <${copy-button} payload="example text">
-  </${copy-button}>
-`
+```html
+<body>
+    <copy-button></copy-button>
+</div>
+<script type="module" src="./copy-button.js"></script>
 ```
+
+### pre-bundled + minifed
+Copy the bundled and minified file to a location that is accessible to your web server:
+
+```sh
+cp ./node_modules/@bicycle-codes/copy-button/dist/index.bundle.min.js ./public/copy-button.min.js
+```
+
+Link to the minified file in HTML:
+
+```html
+<body>
+    <copy-button></copy-button>
+</div>
+<script type="module" src="./copy-button.min.js"></script>
+```
+
+## CSS
+Override the variable `--success-color` to customize the color.
+
+```css
+.copy-button {
+    --success-color: green;
+}
+```
+
+--------------------------------------------------------
 
 Create a button like this
 

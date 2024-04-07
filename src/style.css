@@ -1,18 +1,19 @@
+/* copy-button {
+    outline: 1px solid black;
+} */
+
 .copy-button {
     display: inline;
-    margin-top: 1rem;
     background-color: transparent;
     border: none;
-    padding: 0.3rem 0.4rem;
-    border: none;
     background: none;
-    padding: 0;
+    width: 1rem;
     margin-top: 1rem;
     color: var(--font-color);
 
     & .success-svg-wrapper, .copy-svg-wrapper {
         border-radius: 5px;
-        outline: 1px solid var(--success-color);
+        outline: 1px solid var(--success-color, black);
         padding: 1px 2px;
     }
 
@@ -36,6 +37,7 @@
     &.success {
         & .success-svg-wrapper {
             display: inline;
+            outline-color: transparent;
         }
         & .copy-svg-wrapper {
             display: none;
