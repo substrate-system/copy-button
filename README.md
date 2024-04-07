@@ -13,7 +13,7 @@ npm i -S @nichoth/copy-button
 
 ## demonstration
 
-See [bicycle-codes.github.io/scroll-progress](https://bicycle-codes.github.io/scroll-progress/) for an example with the default CSS.
+See [bicycle-codes.github.io/copy-button](https://bicycle-codes.github.io/copy-button/) for an example with the default CSS.
 
 ## globals
 This looks at a css variable `--success-color`, which determines the color the checkmark that is displayed after you copy something.
@@ -33,7 +33,7 @@ import '@bicycle-codes/copy-button/style.css'
 function ButtonExample () {
     // this *needs* an ID attribute
     return this.html`
-        <copy-button class="scroll example" id="example"></copy-button>
+        <copy-button class="copy example" id="example"></copy-button>
     `
 }
 
