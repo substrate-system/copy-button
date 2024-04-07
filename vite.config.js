@@ -6,6 +6,7 @@ export default defineConfig({
     define: {
         global: 'globalThis'
     },
+    base: '/',
     root: 'example',
     // https://github.com/vitejs/vite/issues/8644#issuecomment-1159308803
     esbuild: {
