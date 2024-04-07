@@ -14,7 +14,7 @@ npm i -S @nichoth/copy-button
 ## use
 
 ## globals
-This looks at a css variable `--success-color`, which is used to color the checkmark that is displayed after you copy something.
+This looks at a css variable `--success-color`, which determines the color the checkmark that is displayed after you copy something.
 
 ### index.js
 Import this file. It depends on [tonic](https://github.com/nichoth/tonic) and [clipboard-copy](https://github.com/feross/clipboard-copy), so you will need to provide them somehow, either through a bundler or `importmap`.

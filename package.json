@@ -42,7 +42,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@nichoth/tonic": "^15.3.4",
+    "@bicycle-codes/tonic": "^15.4.11",
     "clipboard-copy": "^4.0.1"
   },
   "devDependencies": {
@@ -55,7 +55,7 @@
     "postcss-nesting": "^12.0.3",
     "tap-arc": "^1.2.2",
     "tape-run": "^11.0.0",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.4",
     "vite": "^5.1.6"
   },
   "author": "nichoth <nichoth@gmail.com> (https://nichoth.com)",
