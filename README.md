@@ -1,5 +1,5 @@
 # copy button
-![tests](https://github.com/nichoth/copy-button/actions/workflows/nodejs.yml/badge.svg)
+![tests](https://github.com/bicycle-codes/copy-button/actions/workflows/nodejs.yml/badge.svg)
 [![module](https://img.shields.io/badge/module-ESM-blue?style=flat-square)](README.md)
 [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
@@ -8,7 +8,7 @@ A button to copy some text to the system clipboard, made with webcomponents.
 
 ## install
 ```sh
-npm i -S @nichoth/copy-button
+npm i -S @bicycle-codes/copy-button
 ```
 
 ## demonstration
@@ -22,7 +22,7 @@ This looks at a css variable `--success-color`, which determines the color the c
 There are several options.
 
 ### Bundler
-Import this file. It depends on [tonic](https://github.com/nichoth/tonic) and [clipboard-copy](https://github.com/feross/clipboard-copy), so you will need to provide them somehow, either through a bundler or `importmap`.
+Import this file. It depends on [tonic](https://github.com/bicycle-codes/tonic) and [clipboard-copy](https://github.com/feross/clipboard-copy), so you will need to provide them somehow, either through a bundler or `importmap`.
 
 
 ```js

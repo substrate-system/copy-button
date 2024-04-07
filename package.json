@@ -1,5 +1,5 @@
 {
-  "name": "@nichoth/copy-button",
+  "name": "@bicycle-codes/copy-button",
   "description": "Copy button made with web components",
   "type": "module",
   "directories": {
@@ -65,7 +65,7 @@
   "author": "nichoth <nichoth@gmail.com> (https://nichoth.com)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nichoth/copy-button.git"
+    "url": "git+https://github.com/bicycle-codes/copy-button.git"
   },
   "keywords": [
     "copy",
@@ -73,8 +73,8 @@
     "html"
   ],
   "bugs": {
-    "url": "https://github.com/nichoth/copy-button/issues"
+    "url": "https://github.com/bicycle-codes/copy-button/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/nichoth/copy-button#readme"
+  "homepage": "https://github.com/bicycle-codes/copy-button#readme"
 }
