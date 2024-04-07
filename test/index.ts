@@ -1,6 +1,10 @@
 import { test } from '@bicycle-codes/tapzero'
 import Tonic from '@bicycle-codes/tonic'
-import { CopyButton } from '../src/index.js'
+import { CopyButton, SuccessSvg, CopySvg } from '../src/index.js'
+
+Tonic.add(CopyButton)
+Tonic.add(SuccessSvg)
+Tonic.add(CopySvg)
 
 test('create the button', t => {
     const tag = Tonic.getTagName(CopyButton.name)

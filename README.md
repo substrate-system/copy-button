@@ -25,20 +25,25 @@ There are several options.
 Import this file. It depends on [tonic](https://github.com/bicycle-codes/tonic) and [clipboard-copy](https://github.com/feross/clipboard-copy), so you will need to provide them somehow, either through a bundler or `importmap`.
 
 
+#### example
+You *must* use an ID attribute, because the `CopyButton` element contains state.
+
 ```js
 import Tonic from '@bicycle-codes/tonic'
-import { CopyButton } from '@bicycle-codes/copy-button'
+import { CopyButton, SuccessSvg, CopySvg } from '@bicycle-codes/copy-button'
 import '@bicycle-codes/copy-button/style.css'
 
 function ButtonExample () {
-    // this *needs* an ID attribute
+    // this needs an ID attribute
     return this.html`
         <copy-button class="copy example" id="example"></copy-button>
     `
 }
 
-Tonic.add(CopyButton)
 Tonic.add(ButtonExample)
+Tonic.add(CopyButton)
+Tonic.add(SuccessSvg)
+Tonic.add(CopySvg)
 ```
 
 ### pre-bundled
