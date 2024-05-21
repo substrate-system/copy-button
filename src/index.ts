@@ -1,4 +1,4 @@
-import clipboardCopy from 'clipboard-copy'
+import clipboardCopy from './clipboard-copy.js'
 
 export class CopyButton extends HTMLElement {
     constructor () {
@@ -25,7 +25,7 @@ export class CopyButton extends HTMLElement {
             .filter(Boolean)
             .join(' ')
 
-        this.innerHTML =`<button class="${classes}">
+        this.innerHTML = `<button class="${classes}">
             ${CopySvg()}
         </button>`
     }

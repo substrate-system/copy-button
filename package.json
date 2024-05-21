@@ -32,10 +32,10 @@
     ]
   },
   "scripts": {
-    "lint": "eslint \"./src/*.js\"",
+    "lint": "eslint \"./src/*.ts\"",
     "build-tests": "esbuild test/index.ts --target=es2020 --bundle --keep-names > test/test-bundle.js",
     "test": "npm run lint && npm run build && npm run build-tests && npm run test-tape-run",
-    "test-tape-run": "cat test/index.html | tape-run --input=html --static=test | tap-arc",
+    "test-tape-run": "cat test/index.html | tape-run --input=html --static=test | tap-spec",
     "build-css": "postcss src/style.css --use postcss-nesting > dist/style.css",
     "build-css:min": "mkdir -p ./dist/css && postcss src/style.css --use cssnano --use postcss-nesting > dist/style.min.css",
     "build-esm": "tsc --project tsconfig.build.json",
@@ -49,10 +49,12 @@
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@bicycle-codes/tapzero": "^0.9.2",
-    "@nichoth/debug": "^0.6.7",
+    "@bicycle-codes/debug": "^0.6.8",
+    "@bicycle-codes/dom": "^0.0.23",
+    "@bicycle-codes/tapzero": "^0.9.3",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
     "auto-changelog": "^2.4.0",
     "cssnano": "^7.0.1",
     "esbuild": "^0.21.3",
@@ -61,12 +63,12 @@
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "postcss-nesting": "^12.0.3",
-    "tap-arc": "^1.2.2",
+    "tap-spec": "^5.0.0",
     "tape-run": "^11.0.0",
-    "typescript": "^5.4.4",
-    "vite": "^5.1.6"
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
   },
-  "author": "nichoth <nichoth@gmail.com> (https://nichoth.com)",
+  "author": "nichoth <nichoth@nichoth.com> (https://nichoth.com)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bicycle-codes/copy-button.git"
@@ -74,7 +76,8 @@
   "keywords": [
     "copy",
     "button",
-    "html"
+    "html",
+    "web component"
   ],
   "bugs": {
     "url": "https://github.com/bicycle-codes/copy-button/issues"
