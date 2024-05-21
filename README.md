@@ -14,7 +14,7 @@ npm i -S @bicycle-codes/copy-button
 
 ## demonstration
 
-See [bicycle-codes.github.io/copy-button](https://bicycle-codes.github.io/copy-button/) for an example with the default CSS.
+See [bicycle-codes.github.io/copy-button](https://bicycle-codes.github.io/copy-button/) for an example.
 
 ## globals
 This looks at css variables `--success-color` and `--copy-color` which determines the color the checkmark that is displayed after you copy something.
