@@ -4,7 +4,7 @@
     "requireConfigFile": false
   },
   "extends": [
-    "standard",
+    "standard"
   ],
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
