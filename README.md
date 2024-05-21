@@ -8,7 +8,7 @@
 A button to copy some text to the system clipboard, made with webcomponents, with no dependencies.
 
 ## install
-```sh
+```shell
 npm i -S @bicycle-codes/copy-button
 ```
 
