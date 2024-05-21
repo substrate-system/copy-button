@@ -1,10 +1,13 @@
 copy-button {
     display: inline;
     background: none;
-    color: var(--font-color);
     border-radius: 4px;
     border: 1px solid;
     padding: 0.3rem 0.1rem;
+
+    & .copy-wrapper {
+        fill: var(--copy-color, black);
+    }
 
     & button {
         border: none;
