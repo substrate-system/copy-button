@@ -5,7 +5,7 @@
 [![dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg?style=flat-square)](package.json)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
-A button to copy some text to the system clipboard, made with webcomponents.
+A button to copy some text to the system clipboard, made with webcomponents, with no dependencies.
 
 ## install
 ```sh
@@ -17,7 +17,7 @@ npm i -S @bicycle-codes/copy-button
 See [bicycle-codes.github.io/copy-button](https://bicycle-codes.github.io/copy-button/) for an example with the default CSS.
 
 ## globals
-This looks at a css variable `--success-color`, which determines the color the checkmark that is displayed after you copy something.
+This looks at css variables `--success-color` and `--copy-color` which determines the color the checkmark that is displayed after you copy something.
 
 
 ## use
@@ -26,6 +26,7 @@ Include this package, then use the tag `<copy-button>` in HTML.
 ### Example without a build step
 
 #### Copy the files
+Copy files so they are accessible by your web server.
 
 ##### JS
 ```sh
