@@ -74,6 +74,15 @@ import '@bicycle-codes/copy-button/style.css'
 import '@bicycle-codes/copy-button/min/style.css'
 ```
 
+In `vite`, for example, import like this
+
+```js
+import '@bicycle-codes/copy-button'
+import '@bicycle-codes/style.css'
+// or minified css
+import '@bicycle-codes/min/style.css'
+```
+
 ## CSS
 Override the variables `--success-color` and `--copy-color` to customize the color.
 
