@@ -1,5 +1,4 @@
 import { test } from '@bicycle-codes/tapzero'
-import { dom } from '@bicycle-codes/dom'
 import '../src/index.js'
 
 test('create the button', async t => {
