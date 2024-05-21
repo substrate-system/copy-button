@@ -1,3 +1,7 @@
+:root {
+    --success-color: green;
+}
+
 button {
     cursor: pointer;
 }
