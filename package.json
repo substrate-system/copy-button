@@ -17,9 +17,6 @@
     "./min": [
       "./dist/index.min.js"
     ],
-    "./bundle": [
-      "./dist/index.bundle.js"
-    ],
     "./*.css": [
       "./dist/style.css"
     ],

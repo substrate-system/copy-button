@@ -1,46 +1,19 @@
-/* copy-button {
-    outline: 1px solid black;
-} */
-
-.copy-button {
+copy-button {
     display: inline;
-    background-color: transparent;
-    border: none;
     background: none;
-    width: 1rem;
-    margin-top: 1rem;
     color: var(--font-color);
+    border-radius: 4px;
+    border: 1px solid;
+    padding: 0.3rem 0.1rem;
 
-    & .success-svg-wrapper, .copy-svg-wrapper {
-        border-radius: 5px;
-        outline: 1px solid var(--success-color, black);
-        padding: 1px 2px;
-    }
-
-    & .copy-svg-wrapper {
-        outline-color: transparent;
-    }
-
-    & svg {
+    & button {
+        border: none;
+        background-color: transparent;
         position: relative;
-        top: 1px;
+        top: 2px;
     }
 
-    & .success-svg-wrapper {
-        display: none;
-
-        & .success-svg {
-            fill: var(--success-color, black);
-        }
-    }
-
-    &.success {
-        & .success-svg-wrapper {
-            display: inline;
-            outline-color: transparent;
-        }
-        & .copy-svg-wrapper {
-            display: none;
-        }
+    & .success-svg {
+        fill: var(--success-color, black);
     }
 }
