@@ -78,9 +78,9 @@ In `vite`, for example, import like this
 
 ```js
 import '@bicycle-codes/copy-button'
-import '@bicycle-codes/style.css'
+import '@bicycle-codes/copy-button/style.css'
 // or minified css
-import '@bicycle-codes/min/style.css'
+import '@bicycle-codes//copy-button/min/style.css'
 ```
 
 ## CSS
