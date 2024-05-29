@@ -37,7 +37,7 @@
     "test": "npm run lint && npm run build && npm run build-tests && npm run test-tape-run",
     "test-tape-run": "cat test/index.html | tape-run --input=html --static=test | tap-spec",
     "build-css": "postcss src/style.css --use postcss-nesting > dist/style.css",
-    "build-css:min": "mkdir -p ./dist/css && postcss src/style.css --use cssnano --use postcss-nesting > dist/style.min.css",
+    "build-css:min": "mkdir -p ./dist && postcss src/style.css --use cssnano --use postcss-nesting > dist/style.min.css",
     "build-esm": "tsc --project tsconfig.build.json",
     "build-bundle": "esbuild --keep-names --bundle --tsconfig=tsconfig.build.json --outfile=dist/bundle.js src/index.ts",
     "build-bundle:min": "esbuild --keep-names --bundle --tsconfig=tsconfig.build.json --minify --outfile=./dist/bundle.min.js ./src/index.ts",
