@@ -17,7 +17,7 @@ npm i -S @bicycle-codes/copy-button
 See [bicycle-codes.github.io/copy-button](https://bicycle-codes.github.io/copy-button/) for an example.
 
 ## globals
-This looks at css variables `--success-color` and `--copy-color` which determines the color the checkmark that is displayed after you copy something.
+This looks at css variables `--success-color` and `--copy-color` which determines the color of the success checkmark and copy icon.
 
 
 ## use
@@ -30,7 +30,7 @@ Copy files so they are accessible by your web server.
 
 ##### JS
 ```sh
-cp ./node_modules/@bicycle-codes/copy-button/dist/bundle.min.js public/copy-button.js
+cp ./node_modules/@bicycle-codes/copy-button/dist/index.min.js public/copy-button.js
 ```
 
 ##### CSS
@@ -61,10 +61,7 @@ We expose several import options
 // default, unminified
 import '@bicycle-codes/copy-button'
 
-// bundled
-import '@bicycle-codes/copy-button/bundle'
-
-// bundled + minified
+// minified
 import '@bicycle-codes/copy-button/min'
 
 // style
