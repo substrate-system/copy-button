@@ -1,6 +1,7 @@
 # copy button
 ![tests](https://github.com/bicycle-codes/copy-button/actions/workflows/nodejs.yml/badge.svg)
 [![module](https://img.shields.io/badge/module-ESM-blue?style=flat-square)](README.md)
+[![types](https://img.shields.io/npm/types/@bicycle-codes/scroll-progress?style=flat-square)](./dist/index.d.ts)
 [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
 [![dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg?style=flat-square)](package.json)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
