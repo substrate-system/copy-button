@@ -1,7 +1,7 @@
 # copy button
-![tests](https://github.com/bicycle-codes/copy-button/actions/workflows/nodejs.yml/badge.svg)
+![tests](https://github.com/substrate-system/copy-button/actions/workflows/nodejs.yml/badge.svg)
 [![module](https://img.shields.io/badge/module-ESM-blue?style=flat-square)](README.md)
-[![types](https://img.shields.io/npm/types/@bicycle-codes/copy-button?style=flat-square)](./dist/index.d.ts)
+[![types](https://img.shields.io/npm/types/@substrate-system/copy-button?style=flat-square)](./dist/index.d.ts)
 [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
 [![dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg?style=flat-square)](package.json)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
@@ -10,12 +10,12 @@ A button to copy some text to the system clipboard, made with webcomponents, wit
 
 ## install
 ```shell
-npm i -S @bicycle-codes/copy-button
+npm i -S @substrate-system/copy-button
 ```
 
 ## demonstration
 
-See [bicycle-codes.github.io/copy-button](https://bicycle-codes.github.io/copy-button/) for an example.
+See [substrate-system.github.io/copy-button](https://substrate-system.github.io/copy-button/) for an example.
 
 ## globals
 This looks at css variables `--success-color` and `--copy-color` which determines the color of the success checkmark and copy icon.
@@ -31,12 +31,12 @@ Copy files so they are accessible by your web server.
 
 ##### JS
 ```sh
-cp ./node_modules/@bicycle-codes/copy-button/dist/index.min.js public/copy-button.js
+cp ./node_modules/@substrate-system/copy-button/dist/index.min.js public/copy-button.js
 ```
 
 ##### CSS
 ```sh
-cp ./node_modules/@bicycle-codes/copy-button/dist/style.min.css public/copy-button.css
+cp ./node_modules/@substrate-system/copy-button/dist/style.min.css public/copy-button.css
 ```
 
 #### Use in HTML
@@ -60,25 +60,25 @@ We expose several import options
 
 ```js
 // default, unminified
-import '@bicycle-codes/copy-button'
+import '@substrate-system/copy-button'
 
 // minified
-import '@bicycle-codes/copy-button/min'
+import '@substrate-system/copy-button/min'
 
 // style
-import '@bicycle-codes/copy-button/style.css'
+import '@substrate-system/copy-button/style.css'
 
 // style, minifed
-import '@bicycle-codes/copy-button/min/style.css'
+import '@substrate-system/copy-button/min/style.css'
 ```
 
 In `vite`, for example, import like this
 
 ```js
-import '@bicycle-codes/copy-button'
-import '@bicycle-codes/copy-button/style.css'
+import '@substrate-system/copy-button'
+import '@substrate-system/copy-button/style.css'
 // or minified css
-import '@bicycle-codes//copy-button/min/style.css'
+import '@substrate-system//copy-button/min/style.css'
 ```
 
 ## CSS
