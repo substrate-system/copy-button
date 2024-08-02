@@ -49,7 +49,7 @@
     "@bicycle-codes/debug": "^0.6.8",
     "@bicycle-codes/tapzero": "^0.10.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^7.9.0",
+    "@typescript-eslint/parser": "^8.0.0",
     "auto-changelog": "^2.4.0",
     "cssnano": "^7.0.1",
     "esbuild": "^0.23.0",
