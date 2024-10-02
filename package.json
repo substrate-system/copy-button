@@ -78,5 +78,8 @@
     "url": "https://github.com/substrate-system/copy-button/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/substrate-system/copy-button"
+  "homepage": "https://github.com/substrate-system/copy-button",
+  "dependencies": {
+    "@bicycle-codes/dom": "^0.1.2"
+  }
 }

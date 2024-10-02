@@ -1,22 +1,35 @@
+import { sleep } from '@bicycle-codes/dom'
 import clipboardCopy from './clipboard-copy.js'
 
 export class CopyButton extends HTMLElement {
+    payload:string
+
     constructor () {
         super()
+        const payload = this.getAttribute('payload')!
+        this.payload = payload
+    }
 
-        const payload = this.getAttribute('payload')
+    async clickListener () {
+        clipboardCopy(this.payload)
+        // re-render with success check mark
+        this.querySelector('button')!.innerHTML = `${SuccessSvg()}`
+
+        await sleep(2000)
+
+        // re-render with icon
+        this.querySelector('button')!.innerHTML = `${CopySvg()}`
+    }
+
+    disconnectedCallback () {
+        this.removeEventListener('click', this.clickListener)
+    }
+
+    connectedCallback () {
+        const payload = this.payload
         if (!payload) throw new Error('Missing copy text')
 
-        this.addEventListener('click', async () => {
-            clipboardCopy(payload)
-            // re-render with success check mark
-            this.querySelector('button')!.innerHTML = `${SuccessSvg()}`
-
-            await sleep('2000')
-
-            // re-render with icon
-            this.querySelector('button')!.innerHTML = `${CopySvg()}`
-        })
+        this.addEventListener('click', this.clickListener)
 
         const classes = ([
             'copy-button',
@@ -47,10 +60,4 @@ function SuccessSvg () {
             <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
         </svg>
     </span>`
-}
-
-function sleep (ms) {
-    return new Promise(resolve => {
-        setTimeout(() => resolve(null), ms)
-    })
 }
