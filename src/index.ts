@@ -6,7 +6,12 @@ export class CopyButton extends HTMLElement {
 
     constructor () {
         super()
-        const payload = this.getAttribute('payload')!
+        const payload = this.getAttribute('payload')
+
+        if (!payload) {
+            throw new Error('Should have a string to copy.')
+        }
+
         this.payload = payload
     }
 
