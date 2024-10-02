@@ -3,15 +3,11 @@ import clipboardCopy from './clipboard-copy.js'
 
 export class CopyButton extends HTMLElement {
     static observedAttributes:string[] = ['payload']
-    payload:string
+    payload:string|null
 
     constructor () {
         super()
         const payload = this.getAttribute('payload')
-
-        if (!payload) {
-            throw new Error('Should have a string to copy.')
-        }
 
         this.payload = payload
     }
@@ -24,6 +20,8 @@ export class CopyButton extends HTMLElement {
     }
 
     async clickListener () {
+        if (!this.payload) throw new Error('No value to copy')
+
         clipboardCopy(this.payload)
         // re-render with success check mark
         this.querySelector('button')!.innerHTML = `${SuccessSvg()}`
