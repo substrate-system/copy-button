@@ -2,6 +2,7 @@ import { sleep } from '@bicycle-codes/dom'
 import clipboardCopy from './clipboard-copy.js'
 
 export class CopyButton extends HTMLElement {
+    static observedAttributes:string[] = ['payload']
     payload:string
 
     constructor () {
@@ -13,6 +14,13 @@ export class CopyButton extends HTMLElement {
         }
 
         this.payload = payload
+    }
+
+    /**
+     * We are only observing 1 attribute, so `name` will always be 'payload'.
+     */
+    attributeChangedCallback (_name, _oldValue, newValue) {
+        this.payload = newValue
     }
 
     async clickListener () {
