@@ -17,10 +17,10 @@
     "./min": [
       "./dist/index.min.js"
     ],
-    "./*.css": [
+    "./css": [
       "./dist/style.css"
     ],
-    "./min/*.css": [
+    "./css/min": [
       "./dist/style.min.css"
     ],
     "./*": [
