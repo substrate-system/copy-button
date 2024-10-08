@@ -8,7 +8,6 @@ export class CopyButton extends HTMLElement {
     constructor () {
         super()
         const payload = this.getAttribute('payload')
-
         this.payload = payload
     }
 
