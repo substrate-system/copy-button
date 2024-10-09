@@ -18,6 +18,12 @@ npm i -S @substrate-system/copy-button
 See [substrate-system.github.io/copy-button](https://substrate-system.github.io/copy-button/) for an example.
 
 ## globals
+This depends on `@substrate-system/a11y` for a `.visually-hidden` class. Install and import that module as well.
+
+```sh
+npm i -S @substrate-system/a11y
+```
+
 This looks at css variables `--success-color` and `--copy-color` which determines the color of the success checkmark and copy icon.
 
 
