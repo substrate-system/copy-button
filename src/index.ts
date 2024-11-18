@@ -48,7 +48,7 @@ export class CopyButton extends HTMLElement {
             .filter(Boolean)
             .join(' ')
 
-        this.innerHTML = `<button class="${classes}">
+        this.innerHTML = `<button aria-label="Copy" class="${classes}">
             ${CopySvg()}
             <span class="visually-hidden">Copy</span>
         </button>`
