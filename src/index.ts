@@ -82,3 +82,5 @@ function SuccessSvg () {
         </svg>
     </span>`
 }
+
+export default CopyButton
