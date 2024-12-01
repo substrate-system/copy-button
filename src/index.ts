@@ -1,4 +1,4 @@
-import { sleep } from '@bicycle-codes/dom'
+import { sleep } from '@substrate-system/util'
 import clipboardCopy from './clipboard-copy.js'
 
 export class CopyButton extends HTMLElement {

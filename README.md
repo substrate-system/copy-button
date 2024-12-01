@@ -3,7 +3,7 @@
 [![module](https://img.shields.io/badge/module-ESM-blue?style=flat-square)](README.md)
 [![types](https://img.shields.io/npm/types/@substrate-system/copy-button?style=flat-square)](./dist/index.d.ts)
 [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
-[![dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg?style=flat-square)](package.json)
+[![install size](https://packagephobia.com/badge?p=@substrate-system/copy-button)](https://packagephobia.com/result?p=@substrate-system/copy-button)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 A button to copy some text to the system clipboard, made with webcomponents, with no dependencies.
