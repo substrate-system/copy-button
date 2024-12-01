@@ -6,7 +6,7 @@
 [![install size](https://packagephobia.com/badge?p=@substrate-system/copy-button)](https://packagephobia.com/result?p=@substrate-system/copy-button)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
-A button to copy some text to the system clipboard, made with webcomponents, with no dependencies.
+A button to copy some text to the system clipboard, made with webcomponents.
 
 ## install
 ```shell
@@ -17,18 +17,31 @@ npm i -S @substrate-system/copy-button
 
 See [substrate-system.github.io/copy-button](https://substrate-system.github.io/copy-button/) for an example.
 
+
 ## globals
 This depends on `@substrate-system/a11y` for a `.visually-hidden` class. Install and import that module as well.
 
-```sh
-npm i -S @substrate-system/a11y
-```
-
-This looks at css variables `--success-color` and `--copy-color` which determines the color of the success checkmark and copy icon.
+CSS variables `--success-color` and `--copy-color` determine the color of the success checkmark and copy icon.
 
 
 ## use
-Include this package, then use the tag `<copy-button>` in HTML.
+Include this package, then call `customElements.define` with your preferred tag name.
+
+```js
+import { CopyButton } from '@substrate-system/copy-button'
+
+customElements.define('copy-button', CopyButton)
+```
+
+Or call the exported function `register` to use the default tag name, `copy-button`.
+
+```js
+import { register } from '@substrate-system/copy-button'
+
+register()
+
+// the web component can be used now
+```
 
 ### Example without a build step
 
@@ -57,7 +70,10 @@ cp ./node_modules/@substrate-system/copy-button/dist/style.min.css public/copy-b
     <copy-button payload="example text"></copy-button>
 
     <!-- include the script -->
-    <script src="/copy-button.js" type="module"></script>
+    <script type="module">
+        import { CopyButton } from '/copy-button.js'
+        customElements.define('copy-button', CopyButton)
+    </script>
 </body>
 ```
 

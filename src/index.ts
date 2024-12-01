@@ -55,7 +55,9 @@ export class CopyButton extends HTMLElement {
     }
 }
 
-customElements.define('copy-button', CopyButton)
+export function register () {
+    customElements.define('copy-button', CopyButton)
+}
 
 function CopySvg () {
     return `<span class="copy-wrapper">

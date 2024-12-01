@@ -1,5 +1,7 @@
 import { test } from '@bicycle-codes/tapzero'
-import '../src/index.js'
+import { register } from '../src/index.js'
+
+register()
 
 test('create the button', async t => {
     document.body.innerHTML += `<copy-button class="test" payload="example">
