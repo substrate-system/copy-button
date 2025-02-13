@@ -3,7 +3,7 @@
 [![module](https://img.shields.io/badge/module-ESM-blue?style=flat-square)](README.md)
 [![types](https://img.shields.io/npm/types/@substrate-system/copy-button?style=flat-square)](./dist/index.d.ts)
 [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
-[![install size](https://packagephobia.com/badge?p=@substrate-system/copy-button)](https://packagephobia.com/result?p=@substrate-system/copy-button)
+[![install size](https://flat.badgen.net/packagephobia/install/@bicycle-codes/keys?cache-control=no-cache)](https://packagephobia.com/result?p=@bicycle-codes/keys)
 [![license](https://img.shields.io/badge/license-Polyform_Non_Commercial-26bc71?style=flat-square)](LICENSE)
 
 
