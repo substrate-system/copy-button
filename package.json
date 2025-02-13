@@ -40,8 +40,9 @@
     "build-example": "vite --base \"/copy-button/\" build",
     "build": "mkdir -p ./dist && rm -rf ./dist/* && npm run build-esm && npm run build-esm:min && npm run build-css && npm run build-css:min",
     "start": "vite",
+    "toc": "markdown-toc --maxdepth 3 -i README.md",
     "preversion": "npm run lint",
-    "version": "auto-changelog -p --template keepachangelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
+    "version": "npm run toc && auto-changelog -p --template keepachangelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md README.md",
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
@@ -50,8 +51,8 @@
     "@substrate-system/util": "^0.1.16"
   },
   "devDependencies": {
-    "@bicycle-codes/debug": "^0.7.2",
-    "@bicycle-codes/tapzero": "^0.10.3",
+    "@substrate-system/debug": "^0.7.18",
+    "@substrate-system/tapzero": "^0.10.13",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "auto-changelog": "^2.5.0",
@@ -59,13 +60,14 @@
     "esbuild": "^0.25.0",
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
+    "markdown-toc": "^1.2.0",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "postcss-nesting": "^13.0.0",
     "tap-spec": "^5.0.0",
     "tape-run": "^11.0.0",
-    "typescript": "^5.4.5",
-    "vite": "^6.0.1"
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
   },
   "author": "nichoth <nichoth@nichoth.com> (https://nichoth.com)",
   "repository": {
@@ -81,6 +83,6 @@
   "bugs": {
     "url": "https://github.com/substrate-system/copy-button/issues"
   },
-  "license": "MIT",
-  "homepage": "https://github.com/substrate-system/copy-button"
+  "homepage": "https://github.com/substrate-system/copy-button",
+  "license": "SEE LICENSE IN LICENSE"
 }

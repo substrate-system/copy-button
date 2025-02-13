@@ -4,12 +4,18 @@
 [![types](https://img.shields.io/npm/types/@substrate-system/copy-button?style=flat-square)](./dist/index.d.ts)
 [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
 [![install size](https://packagephobia.com/badge?p=@substrate-system/copy-button)](https://packagephobia.com/result?p=@substrate-system/copy-button)
-[![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![license](https://img.shields.io/badge/license-Polyform_Non_Commercial-26bc71?style=flat-square)](LICENSE)
+
 
 A button to copy some text to the system clipboard, made with webcomponents.
 
+<details><summary><h2>Contents</h2></summary>
+<!-- toc -->
+</details>
+
+
 ## install
-```shell
+```sh
 npm i -S @substrate-system/copy-button
 ```
 
@@ -19,10 +25,11 @@ See [substrate-system.github.io/copy-button](https://substrate-system.github.io/
 
 
 ## globals
-This depends on `@substrate-system/a11y` for a `.visually-hidden` class. Install and import that module as well.
+This depends on `@substrate-system/a11y` for a `.visually-hidden` class. Install
+and import that module as well.
 
-CSS variables `--success-color` and `--copy-color` determine the color of the success checkmark and copy icon.
-
+CSS variables `--success-color` and `--copy-color` determine the color of the
+success checkmark and copy icon.
 
 ## use
 Include this package, then call `customElements.define` with your preferred tag name.
