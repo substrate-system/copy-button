@@ -31,6 +31,9 @@ A button to copy some text to the system clipboard, made with webcomponents.
 npm i -S @substrate-system/copy-button
 ```
 
+> [!IMPORTANT]  
+> Be sure to import `@substrate-system/a11y` too.
+
 ## demonstration
 
 See [substrate-system.github.io/copy-button](https://substrate-system.github.io/copy-button/) for an example.
@@ -44,9 +47,12 @@ CSS variables `--success-color` and `--copy-color` determine the color of the
 success checkmark and copy icon.
 
 ## use
-Include this package, then call `customElements.define` with your preferred tag name.
+Include this package, then call `customElements.define` with your preferred tag
+name. Be sure to import `@substrate-system/a11y` too, we use class names
+exposed there for accessibility.
 
 ```js
+import '@substrate-system/a11y'
 import { CopyButton } from '@substrate-system/copy-button'
 
 customElements.define('copy-button', CopyButton)
@@ -96,7 +102,7 @@ cp ./node_modules/@substrate-system/copy-button/dist/style.min.css public/copy-b
 </body>
 ```
 
-### With a JS build step
+### With a build step
 We expose several import options
 
 ```js
