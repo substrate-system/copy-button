@@ -18,7 +18,7 @@ A button to copy some text to the system clipboard, made with webcomponents.
 - [globals](#globals)
 - [use](#use)
   * [Example without a build step](#example-without-a-build-step)
-  * [With a JS build step](#with-a-js-build-step)
+  * [With a build step](#with-a-build-step)
 - [CSS](#css-1)
 
 <!-- tocstop -->
