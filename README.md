@@ -48,8 +48,8 @@ success checkmark and copy icon.
 
 ## use
 Include this package, then call `customElements.define` with your preferred tag
-name. Be sure to import `@substrate-system/a11y` too, we use class names
-exposed there for accessibility.
+name. Be sure to import [`@substrate-system/a11y`](https://github.com/substrate-system/a11y) 
+too; we use class names exposed there for accessibility.
 
 ```js
 import '@substrate-system/a11y'
