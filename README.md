@@ -107,19 +107,19 @@ import '@substrate-system/copy-button'
 import '@substrate-system/copy-button/min'
 
 // style
-import '@substrate-system/copy-button/style.css'
+import '@substrate-system/copy-button/css'
 
 // style, minifed
-import '@substrate-system/copy-button/min/style.css'
+import '@substrate-system/copy-button/css/min'
 ```
 
 In `vite`, for example, import like this
 
 ```js
 import '@substrate-system/copy-button'
-import '@substrate-system/copy-button/style.css'
+import '@substrate-system/copy-button/css'
 // or minified css
-import '@substrate-system//copy-button/min/style.css'
+import '@substrate-system//copy-button/css/min'
 ```
 
 ## CSS
