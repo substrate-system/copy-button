@@ -52,8 +52,9 @@ name. Be sure to import [`@substrate-system/a11y`](https://github.com/substrate-
 too; we use class names exposed there for accessibility.
 
 ```js
-import '@substrate-system/a11y'
 import { CopyButton } from '@substrate-system/copy-button'
+import '@substrate-system/a11y'
+import '@substrate-system/copy-button/css'
 
 customElements.define('copy-button', CopyButton)
 ```
