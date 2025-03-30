@@ -19,7 +19,10 @@ A button to copy some text to the system clipboard, made with webcomponents.
 - [use](#use)
   * [Example without a build step](#example-without-a-build-step)
   * [With a build step](#with-a-build-step)
+  * [`/copy`](#copy)
 - [CSS](#css-1)
+  * [attributes](#attributes)
+  * [Screenshots](#screenshots)
 
 <!-- tocstop -->
 
