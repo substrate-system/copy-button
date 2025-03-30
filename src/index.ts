@@ -20,12 +20,14 @@ export class CopyButton extends HTMLElement {
 
     async clickListener () {
         if (!this.payload) throw new Error('No value to copy')
+        const dur = this.getAttribute('duration')
+        const time:number = dur ? parseInt(dur) : 2000
 
         clipboardCopy(this.payload)
         // re-render with success check mark
         this.querySelector('button')!.innerHTML = `${SuccessSvg()}`
 
-        await sleep(2000)
+        await sleep(time)
 
         // re-render with icon
         this.querySelector('button')!.innerHTML = `${CopySvg()}`

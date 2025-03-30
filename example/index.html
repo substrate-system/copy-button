@@ -8,9 +8,17 @@
 </head>
 <body>
     <div id="root">
-        copy this text by clicking the button
-        <copy-button class="test-life" id="clicker" payload="this text">
-        </copy-button>
+        <p>
+            copy this text by clicking the button
+            <copy-button class="test-life" id="clicker" payload="this text">
+            </copy-button>
+        </p>
+
+        <p>
+            This one will wait longer, 4000 milliseconds
+            <copy-button duration="4000" class="test-life" id="clicker" payload="Testing longer duration">
+            </copy-button>
+        </p>
     </div>
 
     <script>

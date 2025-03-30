@@ -129,6 +129,16 @@ import '@substrate-system/copy-button/css'
 import '@substrate-system//copy-button/css/min'
 ```
 
+### `/copy`
+
+Import just the copy function, no UI.
+
+```js
+import { clipboardCopy } from '@substrate-system/copy-button/copy'
+
+clipboardCopy('hello copies')
+```
+
 ## CSS
 Override the variables `--success-color` and `--copy-color` to customize the color.
 
@@ -139,7 +149,28 @@ Override the variables `--success-color` and `--copy-color` to customize the col
 }
 ```
 
+### attributes
+1 required attribute, 1 optional attribute.
+
+#### `payload`
+The text you want to copy.
+
+```html
+<copy-button payload="example"></copy-button>
+```
+
+#### `duration`
+Length of time in milliseconds that the success checkmark should show.
+Default is `2000` (2 seconds).
+
+```html
+<copy-button duration="4000" payload="example"></copy-button>
+```
+
+
 --------------------------------------------------------
+
+### Screenshots
 
 Create a button like this
 
