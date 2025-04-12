@@ -50,7 +50,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@substrate-system/a11y": "^0.0.5",
+    "@substrate-system/a11y": "^0.0.9",
     "@substrate-system/util": "^0.1.16"
   },
   "devDependencies": {
