@@ -1,6 +1,7 @@
 import { test } from '@substrate-system/tapzero'
 import { dom } from '@substrate-system/dom'
 import { register } from '../src/index.js'
+import { clipboardCopy } from '../src/clipboard-copy.js'
 
 register()
 
@@ -21,14 +22,14 @@ test('create the button', async t => {
     t.ok(test, 'should get element by class')
 })
 
-test('click it', async t => {
-    // Mock the clipboard API to avoid permission issue
-    let copiedText = ''
-    navigator.clipboard.writeText = async (text: string) => {
-        copiedText = text
-        return Promise.resolve()
-    }
+// Mock the clipboard API to avoid permission issue
+let copiedText = ''
+navigator.clipboard.writeText = async (text: string) => {
+    copiedText = text
+    return Promise.resolve()
+}
 
+test('click it', async t => {
     const btn = (await dom.waitFor('copy-button'))!
 
     // Verify button shows copy icon initially
@@ -45,4 +46,9 @@ test('click it', async t => {
     // Verify button shows success icon after clicking
     t.ok(btn.querySelector('.success-svg'),
         'should show success icon after copying')
+})
+
+test('clipboard API', async t => {
+    await clipboardCopy('abc')
+    t.equal(copiedText, 'abc', 'should copy via API call')
 })
