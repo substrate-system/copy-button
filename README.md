@@ -1,10 +1,12 @@
 # copy button
-![tests](https://github.com/substrate-system/copy-button/actions/workflows/nodejs.yml/badge.svg)
+[![tests](https://img.shields.io/github/actions/workflow/status/substrate-system/copy-button/nodejs.yml?style=flat-square)](https://github.com/substrate-system/copy-button/actions/workflows/nodejs.yml)
 [![module](https://img.shields.io/badge/module-ESM-blue?style=flat-square)](README.md)
 [![types](https://img.shields.io/npm/types/@substrate-system/copy-button?style=flat-square)](./dist/index.d.ts)
 [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
+[![dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg?style=flat-square)](package.json)
 [![install size](https://flat.badgen.net/packagephobia/install/@substrate-system/copy-button?cache-control=no-cache)](https://packagephobia.com/result?p=@substrate-system/copy-button)
-[![license](https://img.shields.io/badge/license-Polyform_Non_Commercial-26bc71?style=flat-square)](LICENSE)
+[![GZip size](https://flat.badgen.net/bundlephobia/minzip/@substrate-system/copy-button)](https://bundlephobia.com/package/@substrate-system/copy-button)
+[![license](https://img.shields.io/badge/license-Big_Time-blue?style=flat-square)](LICENSE)
 
 
 A button to copy some text to the system clipboard, made with webcomponents.
