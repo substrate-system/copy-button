@@ -1,6 +1,7 @@
 import { test } from '@substrate-system/tapzero'
 import { dom } from '@substrate-system/dom'
 import { register } from '../src/index.js'
+import { CopyButton } from '../src/html.js'
 import { clipboardCopy } from '../src/clipboard-copy.js'
 
 register()
@@ -51,4 +52,11 @@ test('click it', async t => {
 test('clipboard API', async t => {
     await clipboardCopy('abc')
     t.equal(copiedText, 'abc', 'should copy via API call')
+})
+
+test('html only', async t => {
+    const html = CopyButton(['hello'])
+
+    t.ok(html.includes('class="hello copy-button"'),
+        'should create a string with the given class name')
 })

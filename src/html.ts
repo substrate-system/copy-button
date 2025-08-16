@@ -1,5 +1,10 @@
+import { toAttributes } from '@substrate-system/web-component/util'
+
 export function CopyButton (classes?:string[]):string {
-    const classString = (classes || []).filter(Boolean).join(' ')
+    const classString = (classes || [])
+        .concat(['copy-button'])
+        .filter(Boolean)
+        .join(' ')
 
     return `<button aria-label="Copy" ${classString ? `class="${classString}"` : ''}>
         ${CopySvg()}
@@ -7,8 +12,14 @@ export function CopyButton (classes?:string[]):string {
     </button>`
 }
 
-CopyButton.outerHTML = (classes?:string[]):string => {
-    return `<copy-button>${CopyButton(classes)}</copy-button>`
+CopyButton.outerHTML = (
+    classes?:string[],
+    attrs:{ noOutline?:boolean } = {}
+):string => {
+    const attributes = toAttributes(attrs)
+    return `<copy-button${attributes.length ? ` ${attributes}` : ''}>
+        ${CopyButton(classes)}
+    </copy-button$>`
 }
 
 export function CopySvg () {

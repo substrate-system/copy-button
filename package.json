@@ -48,7 +48,9 @@
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@substrate-system/web-component": "^0.0.29"
+  },
   "devDependencies": {
     "@substrate-system/a11y": "^0.0.13",
     "@substrate-system/debug": "^0.9.2",

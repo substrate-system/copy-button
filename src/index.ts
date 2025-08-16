@@ -43,7 +43,6 @@ export class CopyButton extends HTMLElement {
 
     render () {
         const classes = [
-            'copy-button',
             this.getAttribute('no-outline') ? 'no-outline' : '',
         ]
 
