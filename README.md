@@ -16,20 +16,15 @@ made with webcomponents.
 
 <!-- toc -->
 
-- [install](#install)
-- [demonstration](#demonstration)
-- [globals](#globals)
-- [use](#use)
+- [Install](#install)
+- [Demonstration](#demonstration)
+- [Globals](#globals)
+- [Use](#use)
   * [Example without a build step](#example-without-a-build-step)
   * [With a build step](#with-a-build-step)
   * [`/copy`](#copy)
-    + [Basic Usage](#basic-usage)
-    + [Advanced Usage](#advanced-usage)
-    + [Copy Multi-line Text](#copy-multi-line-text)
-    + [Browser Compatibility](#browser-compatibility)
-    + [Error Handling](#error-handling)
 - [CSS](#css-1)
-  * [attributes](#attributes)
+  * [Attributes](#attributes)
   * [Screenshots](#screenshots)
 
 <!-- tocstop -->
