@@ -22,7 +22,7 @@ CopyButton.outerHTML = (
     </copy-button$>`
 }
 
-export function CopySvg () {
+export function CopySvg ():string {
     return `<span class="copy-wrapper">
         <svg
             aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1"
@@ -34,7 +34,7 @@ export function CopySvg () {
     </span>`
 }
 
-export function SuccessSvg () {
+export function SuccessSvg ():string {
     return `<span class="success-wraper">
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1"
             width="16"

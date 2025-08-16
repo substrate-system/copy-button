@@ -4,6 +4,9 @@ import {
     SuccessSvg
 } from './html'
 import clipboardCopy from './clipboard-copy.js'
+import { define } from '@substrate-system/web-component/util'
+import Debug from '@substrate-system/debug'
+const debug = Debug()
 
 export class CopyButton extends HTMLElement {
     static observedAttributes:string[] = ['payload']
@@ -46,9 +49,7 @@ export class CopyButton extends HTMLElement {
             this.getAttribute('no-outline') ? 'no-outline' : '',
         ]
 
-        if (!this.innerHTML) {
-            this.innerHTML = html(classes)
-        }
+        this.innerHTML = html(classes)
     }
 
     connectedCallback () {
@@ -56,6 +57,7 @@ export class CopyButton extends HTMLElement {
         if (!payload) throw new Error('Missing copy text')
 
         this.render()
+        debug('connected', this.innerHTML)
         this.addEventListener('click', this.clickListener)
     }
 }
@@ -70,6 +72,8 @@ export function isRegistered (elName:string):boolean {
 }
 
 export default CopyButton
+
+define('copy-button', CopyButton)
 
 export function sleep (n:number) {
     return new Promise(resolve => setTimeout(resolve, n))

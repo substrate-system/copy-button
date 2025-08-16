@@ -1,5 +1,10 @@
 import '@substrate-system/a11y'
-import { CopyButton } from '../src/index.js'
+import '../src/index.js'
 import '../src/style.css'
+import './style.css'
 
-customElements.define('copy-button', CopyButton)
+const el = document.getElementById('clicker')!
+
+el.addEventListener('click', ev => {
+    console.log('got the click', ev)
+})

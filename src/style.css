@@ -1,12 +1,17 @@
+:root {
+    --copy-button-success: green;
+    --copy-button: black;
+}
+
 copy-button {
-    display: inline;
+    width: 1rem;
+    height: 1rem;
     background: none;
-    border-radius: 4px;
     border: 1px solid;
     padding: 0.3rem 0.1rem;
 
     & .copy-wrapper {
-        fill: var(--copy-color, black);
+        fill: var(--copy-button, black);
     }
 
     & button {
@@ -17,6 +22,6 @@ copy-button {
     }
 
     & .success-svg {
-        fill: var(--success-color, black);
+        fill: var(--copy-button-success, black);
     }
 }

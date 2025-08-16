@@ -1,6 +1,6 @@
 :root {
-    --success-color: green;
-    --copy-color: black;
+    --copy-button-success: blueviolet;
+    --copy-button: orange;
 }
 
 button {

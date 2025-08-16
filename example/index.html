@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
     <title>Example</title>
 </head>
 <body>
@@ -16,18 +15,13 @@
 
         <p>
             This one will wait longer, 4000 milliseconds
-            <copy-button duration="4000" class="test-life" id="clicker" payload="Testing longer duration">
-            </copy-button>
+            <copy-button
+                duration="4000"
+                class="test-life"
+                payload="Testing longer duration"
+            ></copy-button>
         </p>
     </div>
-
-    <script>
-        const el = document.getElementById('clicker')
-
-        el.addEventListener('click', ev => {
-            console.log('got the click', ev)
-        })
-    </script>
 
     <script type="module" src="./index.ts"></script>
   </body>
