@@ -5,10 +5,16 @@ import {
 } from './html'
 import clipboardCopy from './clipboard-copy.js'
 import { define } from '@substrate-system/web-component/util'
-import Debug from '@substrate-system/debug'
-const debug = Debug()
+
+// for docuement.querySelector
+declare global {
+    interface HTMLElementTagNameMap {
+        'copy-button':CopyButton
+    }
+}
 
 export class CopyButton extends HTMLElement {
+    static TAG = 'copy-button'
     static observedAttributes:string[] = ['payload']
     payload:string|null
 
@@ -45,9 +51,7 @@ export class CopyButton extends HTMLElement {
     }
 
     render () {
-        const classes = [
-            this.getAttribute('no-outline') ? 'no-outline' : '',
-        ]
+        const classes = Array.from(this.classList)
 
         this.innerHTML = html(classes)
     }
@@ -56,19 +60,11 @@ export class CopyButton extends HTMLElement {
         const payload = this.payload
         if (!payload) throw new Error('Missing copy text')
 
-        this.render()
-        debug('connected', this.innerHTML)
+        if (!this.innerHTML.trim()) {
+            this.render()
+        }
         this.addEventListener('click', this.clickListener)
     }
-}
-
-export function register () {
-    if (isRegistered('copy-button')) return
-    return customElements.define('copy-button', CopyButton)
-}
-
-export function isRegistered (elName:string):boolean {
-    return document.createElement(elName).constructor !== window.HTMLElement
 }
 
 export default CopyButton

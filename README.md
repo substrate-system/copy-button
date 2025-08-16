@@ -9,7 +9,8 @@
 [![license](https://img.shields.io/badge/license-Big_Time-blue?style=flat-square)](LICENSE)
 
 
-A button to copy some text to the system clipboard, made with webcomponents.
+An icon button to copy some text to the system clipboard,
+made with webcomponents.
 
 <details><summary><h2>Contents</h2></summary>
 
@@ -22,6 +23,11 @@ A button to copy some text to the system clipboard, made with webcomponents.
   * [Example without a build step](#example-without-a-build-step)
   * [With a build step](#with-a-build-step)
   * [`/copy`](#copy)
+    + [Basic Usage](#basic-usage)
+    + [Advanced Usage](#advanced-usage)
+    + [Copy Multi-line Text](#copy-multi-line-text)
+    + [Browser Compatibility](#browser-compatibility)
+    + [Error Handling](#error-handling)
 - [CSS](#css-1)
   * [attributes](#attributes)
   * [Screenshots](#screenshots)
@@ -31,7 +37,7 @@ A button to copy some text to the system clipboard, made with webcomponents.
 </details>
 
 
-## install
+## Install
 ```sh
 npm i -S @substrate-system/copy-button
 ```
@@ -39,32 +45,32 @@ npm i -S @substrate-system/copy-button
 > [!IMPORTANT]  
 > Be sure to import `@substrate-system/a11y` too.
 
-## demonstration
+## Demonstration
 
 See [substrate-system.github.io/copy-button](https://substrate-system.github.io/copy-button/) for an example.
 
 
-## globals
+## Globals
 This depends on `@substrate-system/a11y` for a `.visually-hidden` class. Install
 and import that module as well.
 
-CSS variables `--success-color` and `--copy-color` determine the color of the
-success checkmark and copy icon.
+CSS variables `--copy-button-success` and `--copy-button` determine the color
+of the success checkmark and copy icon.
 
-## use
-Include this package, then call `customElements.define` with your preferred tag
-name. Be sure to import [`@substrate-system/a11y`](https://github.com/substrate-system/a11y) 
-too; we use class names exposed there for accessibility.
+## Use
+Include this package in your javascript, then use the element in HTML.
+Be sure to import [`@substrate-system/a11y`](https://github.com/substrate-system/a11y) 
+too; we use class names exposed there for accessible icons.
 
 ```js
 import { CopyButton } from '@substrate-system/copy-button'
 import '@substrate-system/a11y'
 import '@substrate-system/copy-button/css'
-
-customElements.define('copy-button', CopyButton)
 ```
 
-Or call the exported function `register` to use the default tag name, `copy-button`.
+```html
+<copy-button payload="this text will be copied"></copy-button>
+```
 
 ```js
 import { register } from '@substrate-system/copy-button'
@@ -136,7 +142,10 @@ import '@substrate-system//copy-button/css/min'
 
 ### `/copy`
 
-Import just the copy function, no UI.
+Import just the copy function, no UI. This gives you access to the underlying
+clipboard functionality without the web component interface.
+
+#### Basic Usage
 
 ```js
 import { clipboardCopy } from '@substrate-system/copy-button/copy'
@@ -144,8 +153,81 @@ import { clipboardCopy } from '@substrate-system/copy-button/copy'
 clipboardCopy('hello copies')
 ```
 
+#### Handle Errors
+
+The `clipboardCopy` function is an async function that returns a Promise,
+so you can handle success and error cases:
+
+```js
+import { clipboardCopy } from '@substrate-system/copy-button/copy'
+
+async function handleCopy() {
+    try {
+        await clipboardCopy('Text to copy to clipboard')
+        console.log('Text copied successfully!')
+    } catch (error) {
+        console.error('Failed to copy text:', error)
+        // Handle the error (e.g., show user feedback)
+    }
+}
+```
+
+#### Copy Multi-line Text
+
+The function preserves formatting including newlines and spaces.
+
+```js
+import { clipboardCopy } from '@substrate-system/copy-button/copy'
+
+const multilineText = `Line 1
+Line 2
+    Indented line 3
+Line 4`
+
+clipboardCopy(multilineText)
+```
+
+#### Browser Compatibility
+
+The `clipboardCopy` function automatically handles browser compatibility:
+
+- **Modern browsers**: Use the
+  [Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard),
+  `navigator.clipboard.writeText()`, when available
+- **Fallback**: Use the legacy `document.execCommand('copy')` method for
+  older browsers
+- **Security**: Requires a secure context (HTTPS) for the Clipboard API,
+  but falls back gracefully
+
+
+#### Error Handling
+
+The function may throw a `DOMException` with name `'NotAllowedError'`
+in the following cases:
+
+- The page is not served over HTTPS (for Clipboard API)
+- The user has not interacted with the page recently (security requirement)
+- The browser doesn't support either clipboard method
+- Permission is denied by the browser
+
+```js
+import { clipboardCopy } from '@substrate-system/copy-button/copy'
+
+try {
+    await clipboardCopy('secure content')
+} catch (error) {
+    if (error.name === 'NotAllowedError') {
+        console.log('Clipboard access was denied or not available')
+        // Perhaps show alternative instructions to the user
+    } else {
+        console.error('Unexpected error:', error)
+    }
+}
+```
+
 ## CSS
-Override the variables `--success-color` and `--copy-color` to customize the color.
+Override the variables `--success-color` and `--copy-color` to customize
+the color.
 
 ```css
 .copy-button {
@@ -154,7 +236,7 @@ Override the variables `--success-color` and `--copy-color` to customize the col
 }
 ```
 
-### attributes
+### Attributes
 1 required attribute, 1 optional attribute.
 
 #### `payload`
