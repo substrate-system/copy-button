@@ -4,7 +4,7 @@ import {
     SuccessSvg
 } from './html'
 import clipboardCopy from './clipboard-copy.js'
-import { define } from '@substrate-system/web-component/util'
+import { define as _define } from '@substrate-system/web-component/util'
 
 // for docuement.querySelector
 declare global {
@@ -69,8 +69,12 @@ export class CopyButton extends HTMLElement {
 
 export default CopyButton
 
-define('copy-button', CopyButton)
+_define('copy-button', CopyButton)
 
-export function sleep (n:number) {
+export function define () {
+    return _define('copy-button', CopyButton)
+}
+
+function sleep (n:number) {
     return new Promise(resolve => setTimeout(resolve, n))
 }

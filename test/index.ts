@@ -1,10 +1,8 @@
 import { test } from '@substrate-system/tapzero'
 import { dom } from '@substrate-system/dom'
-import { register } from '../src/index.js'
 import { CopyButton } from '../src/html.js'
 import { clipboardCopy } from '../src/clipboard-copy.js'
-
-register()
+import '../src/index.js'
 
 test('create the button', async t => {
     // Create and append the element properly so connectedCallback is called

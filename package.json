@@ -33,8 +33,9 @@
   },
   "scripts": {
     "lint": "eslint \"./src/*.ts\" \"./test/*.ts\"",
-    "test": "esbuild ./test/index.ts --bundle | npx tapout",
-    "test-tape-run": "cat test/index.html | tape-run --input=html --static=test | tap-spec",
+    "test:browser": "esbuild ./test/index.ts --bundle | npx tapout",
+    "test:node": "esbuild ./test/node.ts --bundle | node",
+    "test": "npm run test:browser && npm run test:node",
     "build-css": "postcss src/style.css --use postcss-nesting > dist/style.css",
     "build-css:min": "mkdir -p ./dist && postcss src/style.css --use cssnano --use postcss-nesting > dist/style.min.css",
     "build-esm": "esbuild --keep-names --bundle --tsconfig=tsconfig.build.json --format=esm --outdir=./dist src/*.ts && tsc --emitDeclarationOnly --project tsconfig.build.json",
@@ -49,7 +50,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@substrate-system/web-component": "^0.0.29"
+    "@substrate-system/web-component": "^0.0.34"
   },
   "devDependencies": {
     "@substrate-system/a11y": "^0.0.13",

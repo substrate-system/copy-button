@@ -1,4 +1,4 @@
-import { toAttributes } from '@substrate-system/web-component/util'
+import { toAttributes } from '@substrate-system/web-component/attributes'
 
 export function CopyButton (classes?:string[]):string {
     const classString = (classes || [])
