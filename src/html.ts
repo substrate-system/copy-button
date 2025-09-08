@@ -9,7 +9,8 @@ export function CopyButton (classes?:string[]):string {
     return `<button aria-label="Copy" ${classString ? `class="${classString}"` : ''}>
         ${CopySvg()}
         <span class="visually-hidden">Copy</span>
-    </button>`
+    </button>
+    <div aria-live="polite" aria-atomic="true" class="visually-hidden copy-status"></div>`
 }
 
 CopyButton.outerHTML = (
@@ -35,7 +36,7 @@ export function CopySvg ():string {
 }
 
 export function SuccessSvg ():string {
-    return `<span class="success-wraper">
+    return `<span class="success-wrapper">
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1"
             width="16"
             class="success-svg"

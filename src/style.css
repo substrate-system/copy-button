@@ -24,4 +24,12 @@ copy-button {
     & .success-svg {
         fill: var(--copy-button-success, black);
     }
+
+    & .copy-status {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
 }
