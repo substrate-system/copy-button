@@ -6,7 +6,7 @@
     "example": "example",
     "test": "test"
   },
-  "version": "0.5.15",
+  "version": "0.5.16",
   "main": "./dist/index.js",
   "files": [
     "./dist/*"
