@@ -7,30 +7,17 @@
     "test": "test"
   },
   "version": "0.5.14",
-  "main": "./dist/index.min.js",
+  "main": "./dist/index.js",
   "files": [
     "./dist/*"
   ],
   "exports": {
-    ".": [
-      "./dist/index.js"
-    ],
-    "./min": [
-      "./dist/index.min.js"
-    ],
-    "./css": [
-      "./dist/style.css"
-    ],
-    "./css/min": [
-      "./dist/style.min.css"
-    ],
-    "./copy": [
-      "./dist/clipboard-copy.js"
-    ],
-    "./*": [
-      "./dist/*.js",
-      "./dist/*"
-    ]
+    ".": "./dist/index.js",
+    "./min": "./dist/index.min.js",
+    "./css": "./dist/style.css",
+    "./css/min": "./dist/style.min.css",
+    "./copy": "./dist/clipboard-copy.js",
+    "./*": "./dist/*.js"
   },
   "scripts": {
     "lint": "eslint \"./src/*.ts\" \"./test/*.ts\"",
