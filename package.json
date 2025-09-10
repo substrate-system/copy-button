@@ -17,6 +17,8 @@
     "./css": "./dist/style.css",
     "./css/min": "./dist/style.min.css",
     "./copy": "./dist/clipboard-copy.js",
+    "./html": "./dist/html.js",
+    "./client": "./dist/client.js",
     "./*": "./dist/*.js"
   },
   "scripts": {

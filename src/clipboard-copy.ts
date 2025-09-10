@@ -25,7 +25,7 @@ async function copyExecCommand (text:string) {
     // Add the <span> to the page
     document.body.appendChild(span)
 
-    // Make a selection object representing the range of text selected by the user
+    // Make a selection object representing the range of text selected
     const selection = window.getSelection()
     const range = window.document.createRange()
     selection?.removeAllRanges()
