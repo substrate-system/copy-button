@@ -1,14 +1,13 @@
 :root {
     --copy-button-success: green;
-    --copy-button: black;
 }
 
 copy-button {
     width: 1rem;
     height: 1rem;
     background: none;
-    border: 1px solid;
     padding: 0.3rem 0.1rem;
+    color: black;
 
     & .copy-wrapper {
         fill: var(--copy-button, black);
