@@ -68,14 +68,6 @@ import '@substrate-system/copy-button/css'
 <copy-button payload="this text will be copied"></copy-button>
 ```
 
-```js
-import { register } from '@substrate-system/copy-button'
-
-register()
-
-// the web component can be used now
-```
-
 ### Example without a build step
 
 #### Copy the files
