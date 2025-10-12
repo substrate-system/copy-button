@@ -21,7 +21,8 @@ export class CopyButtonClient extends HTMLElement {
     }
 
     async clickListener () {
-        if (!this.payload) return
+        if (!this.payload) return  // do nothing if there is no copy value
+
         const dur = this.getAttribute('duration')
         const time:number = dur ? parseInt(dur) : 2000
 

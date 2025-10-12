@@ -10,7 +10,7 @@ declare global {
 }
 
 /**
- * This is the full version -- DOM + rendering logic.
+ * This is the full version -- behavior + rendering logic.
  */
 
 export class CopyButton extends CopyButtonClient {
