@@ -1,6 +1,6 @@
+import { define as _define } from '@substrate-system/web-component/util'
 import clipboardCopy from './clipboard-copy.js'
 import { CopySvg, SuccessSvg } from './html.js'
-import { define as _define } from '@substrate-system/web-component/util'
 
 export class CopyButtonClient extends HTMLElement {
     static TAG = 'copy-button'
@@ -38,6 +38,7 @@ export class CopyButtonClient extends HTMLElement {
 
         this.dispatchEvent(new CustomEvent('copy', {
             bubbles: true,
+            composed: true,
             detail: { text: this.payload }
         }))
 
