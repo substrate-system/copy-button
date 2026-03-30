@@ -38,7 +38,6 @@ export class CopyButtonClient extends HTMLElement {
 
         this.dispatchEvent(new CustomEvent('copy', {
             bubbles: true,
-            composed: true,
             detail: { text: this.payload }
         }))
 
