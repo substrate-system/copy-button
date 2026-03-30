@@ -348,6 +348,31 @@ test('popover has correct ARIA attributes', async t => {
     el.remove()
 })
 
+test('dispatches copy event with copied text on success', async t => {
+    const el = document.createElement('copy-button')
+    el.setAttribute('payload', 'event-test-text')
+    el.setAttribute('duration', '200')
+    document.body.appendChild(el)
+    await new Promise(r => setTimeout(r, 100))
+
+    let receivedEvent:CustomEvent|null = null
+    el.addEventListener('copy', (e) => {
+        receivedEvent = e as CustomEvent
+    })
+
+    el.clickListener()
+    await new Promise(r => setTimeout(r, 50))
+
+    t.ok(receivedEvent, 'should dispatch a copy event')
+    t.equal(
+        (receivedEvent as unknown as CustomEvent<{ text:string }>).detail.text,
+        'event-test-text',
+        'event detail.text should equal the copied payload'
+    )
+
+    el.remove()
+})
+
 test('all done', () => {
     // @ts-expect-error tests
     window.testsFinished = true
