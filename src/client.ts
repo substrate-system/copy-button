@@ -36,6 +36,11 @@ export class CopyButtonClient extends HTMLElement {
             return  // Don't show success state or hint if copy failed
         }
 
+        this.dispatchEvent(new CustomEvent('copy', {
+            bubbles: true,
+            detail: { text: this.payload }
+        }))
+
         const button = this.querySelector('button')
         if (!button) {
             console.warn('CopyButtonClient: No button element found for' +
