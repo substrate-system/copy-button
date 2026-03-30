@@ -31,6 +31,7 @@ made with webcomponents.
   * [`duration`](#duration)
   * [`hint`](#hint)
   * [Screenshots](#screenshots)
+- [Events](#events)
 
 <!-- tocstop -->
 
@@ -557,3 +558,31 @@ Create a button like this
 With `hint` attribute:
 
 ![Screenshot of hint attribute](image-2.png)
+
+## Events
+
+The element dispatches a `copy` event on the `<copy-button>` element
+after a successful clipboard write.
+
+| Property | Value |
+|---|---|
+| `bubbles` | `true` |
+| `detail.text` | The string that was copied |
+
+```js
+const btn = document.querySelector('copy-button')
+
+btn.addEventListener('copy', (event) => {
+    console.log('copied:', event.detail.text)
+})
+```
+
+To listen at the document level (event bubbles):
+
+```js
+document.addEventListener('copy', (event) => {
+    if (event.target.tagName === 'COPY-BUTTON') {
+        console.log('copied:', event.detail.text)
+    }
+})
+```
