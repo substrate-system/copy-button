@@ -373,6 +373,67 @@ test('dispatches copy event with copied text on success', async t => {
     el.remove()
 })
 
+// ============================================
+// BUTTON CONTENT PRESERVATION
+// ============================================
+
+test('keeps the visually-hidden label during the success state', async t => {
+    const el = document.createElement('copy-button')
+    el.setAttribute('payload', 'label-test-1')
+    el.setAttribute('duration', '300')
+    document.body.appendChild(el)
+    await new Promise(r => setTimeout(r, 100))
+
+    el.querySelector('button')!.click()
+    await new Promise(r => setTimeout(r, 50))
+
+    t.ok(el.querySelector('.success-svg'), 'should be in the success state')
+    t.ok(el.querySelector('.visually-hidden'),
+        'label should survive the swap to the success icon')
+
+    el.remove()
+})
+
+test('keeps the visually-hidden label after reverting', async t => {
+    const el = document.createElement('copy-button')
+    el.setAttribute('payload', 'label-test-2')
+    el.setAttribute('duration', '200')
+    document.body.appendChild(el)
+    await new Promise(r => setTimeout(r, 100))
+
+    el.querySelector('button')!.click()
+    await new Promise(r => setTimeout(r, 350))
+
+    t.ok(el.querySelector('.copy-svg'), 'should have reverted to the copy icon')
+    t.ok(el.querySelector('.visually-hidden'),
+        'label should survive the revert to the copy icon')
+
+    el.remove()
+})
+
+test('swaps only the icon, leaving other button content intact', async t => {
+    const el = document.createElement('copy-button')
+    el.setAttribute('payload', 'label-test-3')
+    el.setAttribute('duration', '200')
+    document.body.appendChild(el)
+    await new Promise(r => setTimeout(r, 100))
+
+    const extra = document.createElement('span')
+    extra.className = 'consumer-content'
+    el.querySelector('button')!.appendChild(extra)
+
+    el.querySelector('button')!.click()
+    await new Promise(r => setTimeout(r, 50))
+    t.ok(el.querySelector('.consumer-content'),
+        'other content should survive the success swap')
+
+    await new Promise(r => setTimeout(r, 300))
+    t.ok(el.querySelector('.consumer-content'),
+        'other content should survive the revert')
+
+    el.remove()
+})
+
 test('all done', () => {
     // @ts-expect-error tests
     window.testsFinished = true
