@@ -52,8 +52,10 @@ export class CopyButtonClient extends HTMLElement {
         // CSS or data attributes
         button.classList.add('copy-success')
         button.setAttribute('data-state', 'success')
-        // re-render with success check mark
-        button.innerHTML = `${SuccessSvg()}`
+        // Swap the icon only, so the visually hidden label and any other
+        // button content survive the state change.
+        const copyIcon = button.querySelector('.copy-wrapper')
+        if (copyIcon) copyIcon.outerHTML = SuccessSvg()
 
         // Show hint popover if hint attribute is present
         if (this.hasAttribute('hint')) {
@@ -65,7 +67,8 @@ export class CopyButtonClient extends HTMLElement {
         // Restore original state
         button.classList.remove('copy-success')
         button.setAttribute('data-state', 'default')
-        button.innerHTML = `${CopySvg()}`  // re-render with copy icon
+        const successIcon = button.querySelector('.success-wrapper')
+        if (successIcon) successIcon.outerHTML = CopySvg()
     }
 
     private showHint (duration:number) {
